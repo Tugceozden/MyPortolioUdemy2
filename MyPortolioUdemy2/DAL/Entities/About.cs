@@ -1,4 +1,4 @@
-﻿namespace MyPortfolioUdemy1.DAL1.Entities
+﻿namespace MyPortfolioUdemy2.DAL.Entities
 {
     public class About
     {

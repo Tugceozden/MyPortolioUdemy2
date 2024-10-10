@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyPortfolioUdemy1.DAL1.Entities;
-using MyPortfolioUdemy1.Views.Entities;
+using MyPortfolioUdemy2.DAL.Entities;
+using MyPortfolioUdemy2.DAL.Entities;
 
 namespace MyPortolioUdemy2.DAL.Context
 {
