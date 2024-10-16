@@ -29,5 +29,30 @@ namespace MyPortolioUdemy2.Controllers
             context.SaveChanges();
             return RedirectToAction("ExperienceList");
         }
-    }
+        public IActionResult DeleteExperience(int id) 
+        {
+            var value = context.Experiences.Find(id);
+            context.Experiences.Remove(value);  
+            context.SaveChanges(); 
+            return RedirectToAction("ExperienceList");
+        
+        }
+        [HttpGet]
+        public IActionResult UpdateExperience(int id) 
+        {
+            var value = context.Experiences.Find(id);
+            return View(value); 
+        
+        }
+        [HttpPost]
+
+        public IActionResult UpdateExperience(Experience experience)
+        {
+            context.Experiences.Update(experience); 
+            context.SaveChanges();
+			return RedirectToAction("ExperienceList");
+
+
+		}
+	}
 }
