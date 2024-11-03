@@ -1,6 +1,6 @@
-﻿@model List<Message>
+﻿@model Message
 @{
-    ViewData["Title"] = "Inbox";
+    ViewData["Title"] = "MessageDetail";
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
@@ -39,14 +39,14 @@
 										<td>@item.SendDate.ToShortDateString()</td>
 										<td><a href="/MessageController1/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
 
-										@if(item.IsRead==true)
+										@if (item.IsRead == true)
 										{
 											<td><a href="/MessageController1/ChangeIsReadToFalse/@item.MessageId" class="btn btn-dark">Okunmadı olarak işaretle</a></td>
 
 										}
 										else
 										{
-									<td><a href="/MessageController1/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Okundu olarak işaretle</a></td>
+											<td><a href="/MessageController1/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Okundu olarak işaretle</a></td>
 
 										}
 
