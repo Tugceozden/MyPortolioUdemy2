@@ -11,5 +11,24 @@ namespace MyPortolioUdemy2.Controllers
 			var values=context.Messages.ToList();	
 			return View(values);
 		}
+
+		public IActionResult ChangeIsReadToTrue(int id)
+		{
+			var value = context.Messages.Find(id);
+			value.IsRead = true;	
+			context.SaveChanges();	
+			return RedirectToAction("Inbox");	
+
+		}
+		public IActionResult ChangeIsReadToFalse(int id)
+		{
+			var value = context.Messages.Find(id);
+			value.IsRead = false;
+			context.SaveChanges();
+			return RedirectToAction("Inbox");
+
+		}
+
+
 	}
 }
