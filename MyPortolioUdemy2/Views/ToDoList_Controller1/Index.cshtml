@@ -35,10 +35,19 @@
 									<tr>
 										<td>@item.ToDoLisId</td>
 										<td>@item.Title</td>
-										<td>@item.Title</td>
 										<td>@item.Date</td>
-										<td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">Sil</a></td>
-										<td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-success">Güncelle</a></td>
+										@if (item.Status == true)
+										{
+											<td><a href="/ToDoListController1/ChangeStatusToFalse/@item.ToDoLisId" class="btn btn-dark">Yapılmadı olarak işaretle</a></td>
+
+										}
+										else
+										{
+											<td><a href="/ToDoListController1/ChangeStatusToTrue/@item.ToDoLisId" class="btn btn-info">Yapıldı olarak işaretle</a></td>
+
+										}
+										<td><a href="/ToDoListController1/DeleteToDoList/@item.ToDoLisId" class="btn btn-danger">Sil</a></td>
+										<td><a href="/ToDoListController1/UpdateToDoList/@item.ToDoLisId" class="btn btn-success">Güncelle</a></td>
 									</tr>
 
 								}
@@ -47,7 +56,7 @@
 
 							</tbody>
 						</table>
-						<a href="/Experience/CreateExperience/" class="btn btn-primary">Yeni Deneyim Girişi</a>
+						<a href="/ToDoListController1/CreateToDoList/" class="btn btn-primary">Yeni Yapılacak İşlem Girişi</a>
 
 					</div>
 				</div>
@@ -58,31 +67,5 @@
 		</div>
 	</div>
 </div>
-<footer class="footer">
-	<div class="container-fluid">
-		<nav class="pull-left">
-			<ul class="nav">
-				<li class="nav-item">
-					<a class="nav-link" href="http://www.themekita.com">
-						ThemeKita
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Help
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="https://themewagon.com/license/#free-item">
-						Licenses
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<div class="copyright ml-auto">
-			2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-		</div>
-	</div>
-</footer>
-</div>
+
 
